@@ -32,10 +32,20 @@ class StockServiceImplMock {
         }
     };
 
+
     @Test
     void retrieveStock() {
         Mockito.when(stockRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(stock));
         Stock stock1 = StI.retrieveStock(0L);
         Assertions.assertNotNull(stock1);
     }
+
+    @Test
+    void retrieveAllStocks()
+    {
+        Mockito.when(stockRepository.findAll()).thenReturn(listStocks);
+        List<Stock> list = StI.retrieveAllStocks();
+        Assertions.assertNotNull(list);
+    }
+
 }

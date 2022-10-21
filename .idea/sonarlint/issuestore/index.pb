@@ -11,7 +11,5 @@ s
 Csrc/main/java/tn/esprit/rh/achat/entities/CategorieFournisseur.java,3\5\35d48a2e7f6c16ed909bb72fd4105500e957b4cb
 f
 6src/main/java/tn/esprit/rh/achat/entities/Produit.java,e\2\e2220286d599e5889fd98c23f8c36a95afe2a3cd
-r
-Bsrc/main/java/tn/esprit/rh/achat/repositories/StockRepository.java,b\4\b47681879c423e7163b8c95884a974b08be8b1c3
 l
 <src/main/java/tn/esprit/rh/achat/services/IStockService.java,8\f\8fb7acc6bc4b1fa83f73fe2e618701eb76ae29a3
