@@ -19,7 +19,7 @@ import java.util.Optional;
 
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
-class ProduitServiceImplMockTest{
+class ProduitServiceImplMock{
     @Mock
     ProduitRepository produitRepository;
     @InjectMocks
