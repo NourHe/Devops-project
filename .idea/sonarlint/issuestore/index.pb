@@ -13,15 +13,3 @@ f
 6src/main/java/tn/esprit/rh/achat/entities/Produit.java,e\2\e2220286d599e5889fd98c23f8c36a95afe2a3cd
 l
 <src/main/java/tn/esprit/rh/achat/services/IStockService.java,8\f\8fb7acc6bc4b1fa83f73fe2e618701eb76ae29a3
-o
-?src/main/java/tn/esprit/rh/achat/services/StockServiceImpl.java,7\7\774a84db3f4411cbf35bc1a488de22a7d063b9cd
-r
-Bsrc/main/java/tn/esprit/rh/achat/repositories/StockRepository.java,b\4\b47681879c423e7163b8c95884a974b08be8b1c3
-s
-Csrc/test/java/tn/esprit/rh/achat/services/StockServiceImplTest.java,6\6\664cb93bca09fe078343b01b39b0277f13347f1d
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-f
-6src/main/java/tn/esprit/rh/achat/AchatApplication.java,b\4\b413c620a5bd35e10018a5ab6033974f72b71423
-s
-Csrc/test/java/tn/esprit/rh/achat/services/StockServiceImplMock.java,0\1\01faa2b8fe297cd82872e463570f79268580452f
