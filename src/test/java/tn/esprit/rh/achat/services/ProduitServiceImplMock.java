@@ -22,14 +22,6 @@ import java.util.Optional;
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
 class ProduitServiceImplMockTest{
-//    private Long idProduit;
-//    private String codeProduit;
-//    private String libelleProduit;
-//    private float prix;
-//    @Temporal(TemporalType.DATE)
-//    private Date dateCreation;
-//    @Temporal(TemporalType.DATE)
-//    private Date dateDerniereModification;
     @Mock
     ProduitRepository produitRepository;
     @InjectMocks
@@ -46,6 +38,12 @@ class ProduitServiceImplMockTest{
     void retrieveAllProduits() {
         Mockito.when(produitRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(produit));
         Produit produit1=produitService.retrieveProduit(2L);
+        Assertions.assertNotNull(produit1);
+    }
+    @Test
+    void retrieveProduit() {
+        Mockito.when(produitRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(produit));
+        Produit produit1 = produitService.retrieveProduit(2L);
         Assertions.assertNotNull(produit1);
     }
 }
