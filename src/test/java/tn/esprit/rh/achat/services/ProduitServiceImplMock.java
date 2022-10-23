@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -37,13 +38,39 @@ class ProduitServiceImplMockTest{
     @Test
     void retrieveAllProduits() {
         Mockito.when(produitRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(produit));
-        Produit produit1=produitService.retrieveProduit(2L);
-        Assertions.assertNotNull(produit1);
+        Produit produit=produitService.retrieveProduit(2L);
+        Assertions.assertNotNull(produit);
     }
     @Test
     void retrieveProduit() {
         Mockito.when(produitRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(produit));
-        Produit produit1 = produitService.retrieveProduit(2L);
-        Assertions.assertNotNull(produit1);
+        Produit produit = produitService.retrieveProduit(2L);
+        Assertions.assertNotNull(produit);
     }
+    @Test
+    void addProduit() {
+        Produit produit = new Produit(4L,"P4","libelleP4",10f,new Date(),new Date());
+        Mockito.when(produitRepository.save(ArgumentMatchers.any(Produit.class))).thenReturn(produit);
+        Produit created = produitService.addProduit(produit);
+        Assertions.assertSame(created,produit);
+        Mockito.verify(produitRepository).save(produit);
+    }
+//    @Test
+//    void updateProduit() {
+//        Produit produit = new Produit(5L,"P5","libelleP5",18.6f,new Date(),new Date());
+//        Produit newproduit = new Produit(5L,"P5New","libelleP5",18.6f,new Date(),new Date());
+//
+//        Mockito.when(produitRepository.findById(produit.getIdProduit())).thenReturn(Optional.of(produit));
+//        produitService.updateProduit(newproduit);
+//
+//        Mockito.verify(produitRepository).save(newproduit);
+//        Mockito.verify(produitRepository).findById(produit.getIdProduit());
+//    }
+//    @Test
+//    void deleteProduit(){
+//        Produit produit = new Produit(4L,"P4","libelleP4",10f,new Date(),new Date());
+//        Mockito.when(produitRepository.findById(produit.getIdProduit())).thenReturn(Optional.of(produit));
+//        produitService.deleteProduit(produit.getIdProduit());
+//        Mockito.verify(produitRepository).deleteById(produit.getIdProduit());
+//    }
 }
