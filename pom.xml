@@ -55,8 +55,17 @@
 			<version>3.0.0</version>
 		</dependency>
 
-	</dependencies>
-
+	<!-- Deploy to Nexus -->
+	<distributionManagement>
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<url>http://192.168.33.10:8081/repository/maven-snapshots/</url>
+		</snapshotRepository>
+		<repository>
+			<id>nexus-releases</id>
+			<url>http://192.168.33.10:8081/repository/maven-releases/ </url>
+		</repository>
+	</distributionManagement>
 	<build>
 		<plugins>
 			<plugin>
