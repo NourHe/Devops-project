@@ -48,6 +48,12 @@ class OperateurServiceImplMock {
 	        Assertions.assertSame(created,Operateur);
 	        Mockito.verify(OperateurRepository).save(Operateur);
 	    }
-	 
+	    @Test
+    void deleteOperateur(){
+       Operateur Operateur = new Operateur("Op3", "surname4", "pwd9");
+        Mockito.when(OperateurRepository.findById(Operateur.getIdOperateur())).thenReturn(Optional.of(Operateur));
+        StI.deleteOperateur(Operateur.getIdOperateur());
+        Mockito.verify(OperateurRepository).deleteById(Operateur.getIdOperateur());
+  }
 	}
 
