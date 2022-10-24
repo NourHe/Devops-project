@@ -3,6 +3,7 @@ package tn.esprit.rh.achat.services;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -39,5 +40,14 @@ class OperateurServiceImplMock {
 	        Operateur Operateur1 = StI.retrieveOperateur(0L);
 	        Assertions.assertNotNull(Operateur1);
 	    }
+	    @Test
+	    void addOperateur() {
+	        Operateur Operateur = new Operateur("Op3", "surname4", "pwd9");
+	        Mockito.when(OperateurRepository.save(ArgumentMatchers.any(Operateur.class))).thenReturn(Operateur);
+	        Operateur created = StI.addOperateur(Operateur);
+	        Assertions.assertSame(created,Operateur);
+	        Mockito.verify(OperateurRepository).save(Operateur);
+	    }
+	 
 	}
 
