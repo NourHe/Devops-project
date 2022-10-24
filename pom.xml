@@ -54,11 +54,21 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>3.0.0</version>
 		</dependency>
-
+		
 	</dependencies>
 
+	<!-- Deploy to Nexus -->
+	<distributionManagement>
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<url>http://172.10.0.140:8081/repository/maven-snapshots/</url>
+		</snapshotRepository>
+		<repository>
+			<id>nexus-releases</id>
+			<url>http://172.10.0.140:8081/repository/maven-releases/ </url>
+		</repository>
+	</distributionManagement>
 	<build>
-	
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -75,6 +85,14 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>${maven-deploy-plugin.version}</version>
+				<configuration>
+					<skip>true</skip>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -97,7 +115,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		
 	</build>
 
 </project>
