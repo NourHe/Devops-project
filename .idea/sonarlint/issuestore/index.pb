@@ -25,3 +25,5 @@ x
 Hsrc/main/java/tn/esprit/rh/achat/repositories/FournisseurRepository.java,e\8\e84fb4f6df39fd9b1e67a9ff92c68dd1519cd1d1
 t
 Dsrc/main/java/tn/esprit/rh/achat/repositories/FactureRepository.java,e\5\e589845f5143596ac27009d17edc6cce3d68d384
+z
+Jsrc/main/java/tn/esprit/rh/achat/services/CategorieProduitServiceImpl.java,3\f\3f21cffd544f45a457d8179dea17138b4b4a1ad5
