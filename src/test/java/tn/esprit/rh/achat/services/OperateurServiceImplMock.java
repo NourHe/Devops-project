@@ -12,6 +12,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import tn.esprit.rh.achat.entities.Operateur;
 import tn.esprit.rh.achat.repositories.OperateurRepository;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -24,7 +30,7 @@ class OperateurServiceImplMock {
 	    OperateurRepository OperateurRepository;
 	    
 	    @InjectMocks
-	    OperateurServiceImpl StI;
+	    OperateurServiceImpl MySevice;
 
 	    Operateur Operateur = new Operateur("Op1", "surname1", "pwd1");
 	    List<Operateur> listOperateurs = new ArrayList<Operateur>() {
@@ -35,25 +41,55 @@ class OperateurServiceImplMock {
 	    };
 
 	    @Test
-	    void retrieveOperateur() {
+	    void retrieveOperateurTestM() {
 	        Mockito.when(OperateurRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(Operateur));
-	        Operateur Operateur1 = StI.retrieveOperateur(0L);
+	        Operateur Operateur1 = MySevice.retrieveOperateur(0L);
 	        Assertions.assertNotNull(Operateur1);
 	    }
 	    @Test
-	    void addOperateur() {
+	    void addOperateurTestM() {
 	        Operateur Operateur = new Operateur("Op3", "surname4", "pwd9");
 	        Mockito.when(OperateurRepository.save(ArgumentMatchers.any(Operateur.class))).thenReturn(Operateur);
-	        Operateur created = StI.addOperateur(Operateur);
+	        Operateur created = MySevice.addOperateur(Operateur);
 	        Assertions.assertSame(created,Operateur);
 	        Mockito.verify(OperateurRepository).save(Operateur);
 	    }
 	    @Test
-    void deleteOperateur(){
-       Operateur Operateur = new Operateur("Op3", "surname4", "pwd9");
-        Mockito.when(OperateurRepository.findById(Operateur.getIdOperateur())).thenReturn(Optional.of(Operateur));
-        StI.deleteOperateur(Operateur.getIdOperateur());
-        Mockito.verify(OperateurRepository).deleteById(Operateur.getIdOperateur());
-  }
+	    void updateOperateurTestM() {
+	    
+	       Operateur Operateur2 = new Operateur("Op9", "surname1", "pwd1");
+	       Operateur2.setIdOperateur(25L);
+	       Mockito.lenient().when(OperateurRepository.findById(Operateur2.getIdOperateur())).thenReturn(Optional.of(Operateur2));
+      when(OperateurRepository.save(Operateur2)).thenReturn(Operateur2);
+	        MySevice.updateOperateur(Operateur2);
+        Mockito.verify(OperateurRepository).save(Operateur2);
+
+    }
+//	    @Test
+//	    void updateOperateur() {
+//	    	 Operateur mockOperateur = new Operateur("vito", "test456", "mumbai");
+//	    	 
+//	         when(OperateurRepository.findById(mockOperateur.getIdOperateur())).thenReturn(Optional.of(mockOperateur));
+//
+//	         mockOperateur.setPassword("test987");
+//	         when(OperateurRepository.save(mockOperateur)).thenReturn(mockOperateur);
+//	         Boolean value = mockOperateur != null ? true : false;
+//
+//	         Operateur mockOperateurDTO = modelMapper.map(mockOperateur, Operateur.class);
+//
+//	         assertEquals(value, MySevice.updateOperateur(mockOperateurDTO));
+//	         verify(OperateurRepository, times(1)).save(mockOperateur);
+//	    }
+	    @Test
+	     void deleteOperateurTestM() {
+
+	        Operateur Operateur2Delete = new Operateur("TestDel1", "test678", "secret");
+	        Mockito.lenient().when(OperateurRepository.findById(Operateur2Delete.getIdOperateur())).thenReturn(Optional.of(Operateur2Delete));
+
+	        MySevice.deleteOperateur(Operateur2Delete.getIdOperateur());
+
+	        verify(OperateurRepository).deleteById(Operateur2Delete.getIdOperateur());
+	    }
+
 	}
 
