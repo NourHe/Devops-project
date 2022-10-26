@@ -52,22 +52,21 @@ class ProduitServiceImplMock{
         Assertions.assertSame(created,produit);
         Mockito.verify(produitRepository).save(produit);
     }
-//    @Test
-//    void updateProduit() {
-//        Produit produit = new Produit(5L,"P5","libelleP5",18.6f,new Date(),new Date());
-//        Produit newproduit = new Produit(5L,"P5New","libelleP5",18.6f,new Date(),new Date());
-//
-//        Mockito.when(produitRepository.findById(produit.getIdProduit())).thenReturn(Optional.of(produit));
-//        produitService.updateProduit(newproduit);
-//
-//        Mockito.verify(produitRepository).save(newproduit);
-//        Mockito.verify(produitRepository).findById(produit.getIdProduit());
-//    }
-//    @Test
-//    void deleteProduit(){
-//        Produit produit = new Produit(4L,"P4","libelleP4",10f,new Date(),new Date());
-//        Mockito.when(produitRepository.findById(produit.getIdProduit())).thenReturn(Optional.of(produit));
-//        produitService.deleteProduit(produit.getIdProduit());
-//        Mockito.verify(produitRepository).deleteById(produit.getIdProduit());
-//    }
+    @Test
+    void updateProduit() {
+        Produit produit = new Produit(5L,"P5","libelleP5",18.6f,new Date(),new Date());
+        Mockito.when(produitRepository.save(ArgumentMatchers.any(Produit.class))).thenReturn(produit);
+        Produit updated = produitService.updateProduit(produit);
+        Assertions.assertNotNull(updated);
+        Mockito.verify(produitRepository).save(Mockito.any(Produit.class));
+    }
+    @Test
+    void deleteOperateurTestM() {
+
+        Produit produit = new Produit(4L,"P4","libelleP4",10f,new Date(),new Date());
+        Mockito.lenient().when(produitRepository.findById(produit.getIdProduit())).thenReturn(Optional.of(produit));
+        produitService.deleteProduit(produit.getIdProduit());
+        Mockito.verify(produitRepository).deleteById(produit.getIdProduit());
+    }
+
 }
