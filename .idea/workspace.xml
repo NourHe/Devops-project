@@ -51,7 +51,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "com.sonatype.iq.idea.config.ProjectConfigurable",
     "spring.configuration.checksum": "b82d04823d936ca1edb92994b8cabeff"
   }
 }]]></component>
@@ -166,6 +166,8 @@
       <workItem from="1666821793962" duration="2826000" />
       <workItem from="1666825447989" duration="848000" />
       <workItem from="1666826311531" duration="1675000" />
+      <workItem from="1666828001099" duration="1249000" />
+      <workItem from="1666873714546" duration="1697000" />
     </task>
     <servers />
   </component>

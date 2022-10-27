@@ -80,24 +80,24 @@
 					<skip>true</skip>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>default-deploy</id>
-						<phase>deploy</phase>
-						<goals>
-							<goal>deploy</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<serverId>nexus</serverId>
-					<nexusUrl>http://192.168.100.200:8081/</nexusUrl>
-					<skipStaging>true</skipStaging>
-				</configuration>
-			</plugin>
+<!--			<plugin>-->
+<!--				<groupId>org.sonatype.plugins</groupId>-->
+<!--				<artifactId>nexus-staging-maven-plugin</artifactId>-->
+<!--				<executions>-->
+<!--					<execution>-->
+<!--						<id>default-deploy</id>-->
+<!--						<phase>deploy</phase>-->
+<!--						<goals>-->
+<!--							<goal>deploy</goal>-->
+<!--						</goals>-->
+<!--					</execution>-->
+<!--				</executions>-->
+<!--				<configuration>-->
+<!--					<serverId>nexus</serverId>-->
+<!--					<nexusUrl>http://192.168.100.200:8081/</nexusUrl>-->
+<!--					<skipStaging>true</skipStaging>-->
+<!--				</configuration>-->
+<!--			</plugin>-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
