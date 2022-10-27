@@ -19,9 +19,3 @@ s
 Csrc/test/java/tn/esprit/rh/achat/services/StockServiceImplTest.java,6\6\664cb93bca09fe078343b01b39b0277f13347f1d
 f
 6src/main/java/tn/esprit/rh/achat/AchatApplication.java,b\4\b413c620a5bd35e10018a5ab6033974f72b71423
-o
-?src/main/java/tn/esprit/rh/achat/services/StockServiceImpl.java,7\7\774a84db3f4411cbf35bc1a488de22a7d063b9cd
-s
-Csrc/test/java/tn/esprit/rh/achat/services/StockServiceImplMock.java,0\1\01faa2b8fe297cd82872e463570f79268580452f
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
