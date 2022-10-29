@@ -1,9 +1,23 @@
-FROM node:12.18-alpine as build
+# Use official node image as the base image
+FROM node:latest
+
+# Set the working directory
 WORKDIR /app
+
+# Add the source code to app
 COPY . .
+
+# Install all the dependencies
 RUN npm install --force
-RUN npm run build
+
+# Generate the build of the application
+RUN npm run build --prod
+
+
 # Stage 2: Serve app with nginx servera
-FROM nginx:latest
-COPY --from=build /app/dist/crudtuto-Front /usr/share/nginx/html
-EXPOSE 80
+
+# Use official nginx image as the base image
+FROM nginx:alpine
+
+# Copy the build output to replace the default nginx contents.
+COPY --from=node /app/dist/crudtuto-front /usr/share/nginx/html
