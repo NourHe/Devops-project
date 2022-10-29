@@ -13,7 +13,7 @@ services:
       - "3306:3306"
 
   spring_app:
-    image: achat
+    image: yousseftfifha/achat
     container_name: achat
     restart: on-failure
     ports:
@@ -28,8 +28,9 @@ services:
            "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
            "spring.jpa.hibernate.ddl-auto" : "update"
          }'
+
   achatfront:
-    image: achatfront
+    image: yousseftfifha/achatfront
     container_name: achatfront
     links:
       - spring_app
