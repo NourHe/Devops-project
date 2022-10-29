@@ -13,7 +13,7 @@ services:
       - "3306:3306"
 
   spring_app:
-    image: yousseftfifha/achat
+    image: achat
     container_name: achat
     restart: on-failure
     ports:
@@ -30,7 +30,7 @@ services:
          }'
 
   achatfront:
-    image: yousseftfifha/achatfront
+    image: achatfront
     container_name: achatfront
     links:
       - spring_app
