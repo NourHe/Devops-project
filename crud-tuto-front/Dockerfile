@@ -1,10 +1,10 @@
 # Stage 1: Compile and Build angular codebase
-FROM node:12.18-alpine as build
-WORKDIR /app
-COPY . .
-RUN npm install --force
+FROM node:latest
+WORKDIR /usr/local/app
+COPY ./ /usr/local/app/
+RUN npm install
 RUN npm run build
-# Stage 2: Serve app with nginx servera
+# Stage 2: Serve app with nginx server
 FROM nginx:latest
-COPY --from=build /app/dist/crudtuto-Front /usr/share/nginx/html
+COPY --from=build /usr/local/app/dist/crudtuto-Front /usr/share/nginx/html
 EXPOSE 80

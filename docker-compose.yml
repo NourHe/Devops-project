@@ -14,7 +14,7 @@ services:
   app:
     depends_on:
       - mysqldb
-    image: projetachat
+    image: ghadaslimene/projetachat
     container_name: projetachat
     restart: on-failure
     ports:
@@ -28,7 +28,7 @@ services:
         "spring.jpa.hibernate.ddl-auto" : "update"
       }'
   projetachatfront:
-      image: projetachatfront
+      image: ghadaslimene/projetachatfront
       container_name: projetachatfront
       links:
         - app
