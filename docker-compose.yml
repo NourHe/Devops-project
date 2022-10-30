@@ -36,7 +36,3 @@ services:
         - app
       ports:
         - 80:80
-  volumes:
-    - .m2:/root/.m2
-  stdin_open: true
-  tty: true
