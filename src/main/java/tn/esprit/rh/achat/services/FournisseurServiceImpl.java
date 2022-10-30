@@ -66,14 +66,14 @@ public class FournisseurServiceImpl implements IFournisseurService {
 	}
 
 	@Override
-	public Fournisseur retrieveFournisseur(Long fournisseurId) {
+	public Fournisseur retrieveFournisseur(Long fournisseurId)   {
 
 		 return fournisseurRepository.findById(fournisseurId).orElse(null);
 
 	}
 
 	@Override
-	public void assignSecteurActiviteToFournisseur(Long idSecteurActivite, Long idFournisseur) {
+	public void assignSecteurActiviteToFournisseur(Long idSecteurActivite, Long idFournisseur) throws NullPointerException {
 		Fournisseur fournisseur = fournisseurRepository.findById(idFournisseur).orElse(null);
 		SecteurActivite secteurActivite = secteurActiviteRepository.findById(idSecteurActivite).orElse(null);
         fournisseur.getSecteurActivites().add(secteurActivite);
