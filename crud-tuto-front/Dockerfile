@@ -43,6 +43,7 @@ FROM nginx:latest
 
 # Copy the build output to replace the default nginx contents.
 COPY  /usr/local/app/dist/crudtuto-front /usr/share/nginx/html
+RUN ls /usr/local/app/dist/
 
 # Expose port 80
 EXPOSE 80
