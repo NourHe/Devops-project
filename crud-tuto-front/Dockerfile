@@ -1,17 +1,29 @@
-## Stage 1: Compile and Build angular codebase
-#FROM node:12.18-alpine as build
-#WORKDIR /app
-#COPY . .
-#RUN npm install --force
-#RUN npm run build
-## Stage 2: Serve app with nginx servera
-#FROM nginx:latest
-#COPY --from=build /app/dist/crudtuto-Front /usr/share/nginx/html
-#EXPOSE 80
+### Stage 1: Compile and Build angular codebase
+##FROM node:12.18-alpine as build
+##WORKDIR /app
+##COPY . .
+##RUN npm install --force
+##RUN npm run build
+### Stage 2: Serve app with nginx servera
+##FROM nginx:latest
+##COPY --from=build /app/dist/crudtuto-Front /usr/share/nginx/html
+##EXPOSE 80
+#
 
-FROM node:14-alpine
-RUN npm install -g @angular/cli
-USER node
+#FROM node:14-alpine
+#RUN npm install -g @angular/cli
+#USER node
+#WORKDIR /app
+#EXPOSE 4200 49153
+#CMD npm start
+
+FROM node:14.17.0-alpine as build-step
+RUN mkdir -p /app \
 WORKDIR /app
-EXPOSE 4200 49153
-CMD npm start
+COPY package.json /app
+RUN npm install
+COPY . /app
+RUN npm run build --prod
+FROM nginx:1.20.1
+COPY --from=build-step /app/dist/crudtuto-Front  /usr/share/nginx/html
+EXPOSE 4200:80
