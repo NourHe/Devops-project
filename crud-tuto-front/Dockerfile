@@ -20,10 +20,9 @@
 FROM node:14-alpine
 RUN mkdir -p /app \
 WORKDIR /app
-COPY package.json /app
+COPY . .
 RUN npm install
-COPY . /app
 RUN npm run build --prod
-FROM nginx:1.20.1
-COPY --from=build-step /app/dist/crudtuto-Front  /usr/share/nginx/html
+FROM nginx:latest
+COPY  /app/dist/crudtuto-Front  /usr/share/nginx/html
 EXPOSE 4200:80
