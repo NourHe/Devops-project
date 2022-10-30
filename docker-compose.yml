@@ -33,10 +33,21 @@ services:
   achatfront:
     image: yousseftfifha/achatfront
     container_name: achatfront
-    links:
-      - spring_app
-    depends_on:
-      - spring_app
+    build: .
+    command: sh -c "npm start"
     ports:
-      - 4200:80
+      - 4200:4200
+    working_dir: /home/node/app
+    volumes:
+      - ./:/home/node/app
+      - node_modules:/home/node/app/node_modules
+#  achatfront:
+#    image: yousseftfifha/achatfront
+#    container_name: achatfront
+#    links:
+#      - spring_app
+#    depends_on:
+#      - spring_app
+#    ports:
+#      - 4200:4200
 

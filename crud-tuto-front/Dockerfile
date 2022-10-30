@@ -1,8 +1,18 @@
+#
+#FROM node:14-alpine
+#RUN npm install -g @angular/cli
+#USER node
+#WORKDIR /app
+#EXPOSE 4200:80
+#CMD npm start
+#
 
-FROM node:14-alpine
-RUN npm install -g @angular/cli
+
+FROM node:lts
+RUN mkdir /home/node/app && chown node:node /home/node/app
+RUN mkdir /home/node/app/node_modules && chown node:node /home/node/app/node_modules
+WORKDIR  /home/node/app
 USER node
-WORKDIR /app
-EXPOSE 4200:80
-CMD npm start
-
+COPY --chown=node:node package.json package-lock.json ./
+RUN npm ci --quiet
+COPY --chown=node:node . .
