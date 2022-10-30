@@ -18,31 +18,16 @@
 #CMD npm start
 
 
-# Stage 1: Compile and Build angular codebase
+FROM node:12.7-alpine AS build
+WORKDIR /app
+COPY / ./
+COPY package*.json ./
 
-# Use official node image as the base image
-FROM node:12.15
+RUN npm install -g @angular/cli@10.0.4 && \
+    npm install && \
+    ng build
+COPY . .
 
-# Set the working directory
-WORKDIR /usr/local/app
-
-# Add the source code to app
-COPY ./ /usr/local/app/
-
-# Install all the dependencies
-RUN npm install
-
-# Generate the build of the application
-RUN npm run build
-
-
-# Stage 2: Serve app with nginx server
-
-# Use official nginx image as the base image
-FROM nginx:latest
-
-# Copy the build output to replace the default nginx contents.
-COPY  /usr/local/app/dist/crudtuto-front/ /usr/share/nginx/html
-
-# Expose port 80
-EXPOSE 80
+FROM nginx:1.17.1-alpine
+WORKDIR /app
+COPY --from=build /app/dist/ui /usr/share/nginx/html
