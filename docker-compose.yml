@@ -33,21 +33,19 @@ services:
   achatfront:
     image: yousseftfifha/achatfront
     container_name: achatfront
-    build: .
-    command: sh -c "npm start"
+    expose:
+      - 4200
+    links:
+      - spring_app
+    depends_on:
+      - spring_app
     ports:
       - 4200:4200
-    working_dir: /home/node/app
     volumes:
       - ./:/home/node/app
       - node_modules:/home/node/app/node_modules
-#  achatfront:
-#    image: yousseftfifha/achatfront
-#    container_name: achatfront
-#    links:
-#      - spring_app
-#    depends_on:
-#      - spring_app
-#    ports:
-#      - 4200:4200
+    restart: on-failure
+    working_dir:  /app
+    command: "npm install && npm install -g @angular/cli@12.14 && ng serve --open --host 0.0.0.0 --port 4200 --disable-host-check"
+
 
