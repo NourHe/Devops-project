@@ -1,11 +1,11 @@
-version: "3.3"
+version: "3"
 
 services:
   mysqldb:
-    image: mysql:8
+    image: mysql
     restart: unless-stopped
     environment:
-      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_ROOT_PASSWORD= root
       - MYSQL_DATABASE= 'achatdb'
     ports:
       - "3306:3306"
