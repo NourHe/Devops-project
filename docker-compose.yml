@@ -27,14 +27,14 @@ services:
         "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
         "spring.jpa.hibernate.ddl-auto" : "update"
       }'
-  projetachatfront:
-      image: ghadaslimene/projetachatfront
-      container_name: projetachatfront
-      links:
-        - app
-      depends_on:
-        - app
-      ports:
-        - 80:80
+#  projetachatfront:
+#      image: ghadaslimene/projetachatfront
+#      container_name: projetachatfront
+#      links:
+#        - app
+#      depends_on:
+#        - app
+#      ports:
+#        - 80:80
 volumes:
   db:

@@ -11,9 +11,6 @@ s
 Csrc/test/java/tn/esprit/rh/achat/services/StockServiceImplTest.java,6\6\664cb93bca09fe078343b01b39b0277f13347f1d
 f
 6src/main/java/tn/esprit/rh/achat/AchatApplication.java,b\4\b413c620a5bd35e10018a5ab6033974f72b71423
-:
-
-Dockerfile,6\6\6651ddff6eb82c840ced7c1dddee15c6e1913dd4
 u
 Esrc/main/java/tn/esprit/rh/achat/controllers/StockRestController.java,2\2\2217e1a178510d28a7fc03ee4626b1821fa022bd
 s
