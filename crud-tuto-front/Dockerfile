@@ -8,7 +8,7 @@
 #
 
 
-FROM node:lts
+FROM node:12.15-alpine
 RUN mkdir /home/node/app
 RUN mkdir /home/node/app/node_modules
 WORKDIR  /home/node/app
