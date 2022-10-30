@@ -27,3 +27,11 @@ t
 Dsrc/main/java/tn/esprit/rh/achat/repositories/FactureRepository.java,e\5\e589845f5143596ac27009d17edc6cce3d68d384
 z
 Jsrc/main/java/tn/esprit/rh/achat/services/CategorieProduitServiceImpl.java,3\f\3f21cffd544f45a457d8179dea17138b4b4a1ad5
+}
+Msrc/test/java/tn/esprit/rh/achat/services/FournisseurServiceImplTestMock.java,f\0\f001509130bced4f42e7fc3154162803cd1a2e2e
+s
+Csrc/main/java/tn/esprit/rh/achat/entities/CategorieFournisseur.java,3\5\35d48a2e7f6c16ed909bb72fd4105500e957b4cb
+p
+@src/main/java/tn/esprit/rh/achat/entities/DetailFournisseur.java,e\4\e42c8d58382940ec165d64342d9e85e085034c37
+j
+:src/main/java/tn/esprit/rh/achat/entities/Fournisseur.java,8\4\841f85303f57a2304f12a5bc2490499d1da744be
