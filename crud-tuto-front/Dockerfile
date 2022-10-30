@@ -17,7 +17,7 @@
 #EXPOSE 4200 49153
 #CMD npm start
 
-FROM node:14.17.0-alpine as build-step
+FROM node:14-alpine
 RUN mkdir -p /app \
 WORKDIR /app
 COPY package.json /app
