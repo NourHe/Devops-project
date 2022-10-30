@@ -16,7 +16,7 @@ services:
       # Where our data will be persisted
 
   spring-app:
-    image: achat
+    image: gahtanbensalman/achat
     ports:
       - "8089:8089"
     depends_on:
