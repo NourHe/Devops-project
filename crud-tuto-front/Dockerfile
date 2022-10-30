@@ -40,10 +40,10 @@ RUN npm run build
 
 # Use official nginx image as the base image
 FROM nginx:latest
+RUN ls /usr/local/app/dist/
 
 # Copy the build output to replace the default nginx contents.
 COPY  /usr/local/app/dist/crudtuto-front /usr/share/nginx/html
-RUN ls /usr/local/app/dist/
 
 # Expose port 80
 EXPOSE 80
