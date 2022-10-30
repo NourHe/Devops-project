@@ -28,3 +28,7 @@ w
 Gsrc/main/java/tn/esprit/rh/achat/controllers/FactureRestController.java,f\0\f07e983b8d6f4bc3e16b7e2a5dbd872211ecc664
 {
 Ksrc/main/java/tn/esprit/rh/achat/controllers/FournisseurRestController.java,0\2\02e3780e69d4306834f9cffc081b8419a3110ac4
+u
+Esrc/main/java/tn/esprit/rh/achat/controllers/OperateurController.java,0\8\0838eba035a4a00bc4399334e0a63ea173835699
+w
+Gsrc/main/java/tn/esprit/rh/achat/controllers/ProduitRestController.java,4\4\44049d0dceb7e63b9cff4011ee7654aee115e79c
