@@ -31,8 +31,8 @@ services:
 
 
   achatfront:
-    image: achatfront
-    container_name: yousseftfifha/achatfront
+    image: yousseftfifha/achatfront
+    container_name: achatfront
     links:
       - spring_app
     depends_on:
