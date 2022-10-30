@@ -13,6 +13,6 @@ RUN mkdir /home/node/app
 RUN mkdir /home/node/app/node_modules
 WORKDIR  /home/node/app
 USER node
-COPY node:node package.json package-lock.json ./
+COPY  package.json package-lock.json ./
 RUN npm ci --quiet
 COPY --chown=node:node . .
