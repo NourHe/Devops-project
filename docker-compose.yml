@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD= yes
-      - MYSQL_DATABASE= achatdb
+      - MYSQL_DATABASE= 'achatdb'
     ports:
       - "3306:3306"
     volumes:
@@ -25,8 +25,10 @@ services:
         "spring.datasource.username" : "root",
         "spring.datasource.password" : "",
         "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
-        "spring.jpa.hibernate.ddl-auto" : "update"
+        "spring.jpa.hibernate.ddl-auto" : "create-drop"
       }'
+    volumes:
+      - .m2:/root/.m2
 #  projetachatfront:
 #      image: ghadaslimene/projetachatfront
 #      container_name: projetachatfront
