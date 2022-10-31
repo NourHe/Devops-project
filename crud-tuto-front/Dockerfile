@@ -14,7 +14,7 @@ COPY package.json /app/package.json
 
 WORKDIR /app
 RUN npm install
-RUN npm install -g @angular/cli@8.1.2
+RUN npm install -g @angular/cli@12.14
 
 ENV PATH /app/node_modules/.bin:$PATH
 
