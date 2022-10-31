@@ -5,8 +5,6 @@ f
 6src/main/java/tn/esprit/rh/achat/entities/Produit.java,e\2\e2220286d599e5889fd98c23f8c36a95afe2a3cd
 r
 Bsrc/main/java/tn/esprit/rh/achat/repositories/StockRepository.java,b\4\b47681879c423e7163b8c95884a974b08be8b1c3
-s
-Csrc/test/java/tn/esprit/rh/achat/services/StockServiceImplTest.java,6\6\664cb93bca09fe078343b01b39b0277f13347f1d
 u
 Esrc/main/java/tn/esprit/rh/achat/controllers/StockRestController.java,2\2\2217e1a178510d28a7fc03ee4626b1821fa022bd
 s
