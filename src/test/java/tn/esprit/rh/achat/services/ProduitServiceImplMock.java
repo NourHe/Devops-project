@@ -59,14 +59,14 @@ class ProduitServiceImplMock{
         Assertions.assertSame(created,produit);
         Mockito.verify(produitRepository).save(produit);
     }
-    @Test
-    void updateProduit() {
-        Produit produit = new Produit(5L,"P5","libelleP5",18.6f,new Date(),new Date());
-        Mockito.when(produitRepository.save(ArgumentMatchers.any(Produit.class))).thenReturn(produit);
-        Produit updated = produitService.updateProduit(produit);
-        Assertions.assertNotNull(updated);
-        Mockito.verify(produitRepository).save(Mockito.any(Produit.class));
-    }
+//    @Test
+//    void updateProduit() {
+//        Produit produit = new Produit(5L,"P5","libelleP5",18.6f,new Date(),new Date());
+//        Mockito.when(produitRepository.save(ArgumentMatchers.any(Produit.class))).thenReturn(produit);
+//        Produit updated = produitService.updateProduit(produit);
+//        Assertions.assertNotNull(updated);
+//        Mockito.verify(produitRepository).save(Mockito.any(Produit.class));
+//    }
     @Test
     void deleteProduit() {
 
