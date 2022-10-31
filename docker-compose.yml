@@ -32,19 +32,6 @@ services:
       - .m2:/root/.m2
     stdin_open: true
     tty: true
-  projetachatfront:
-    image: ghadaslimene/projetachatfront
-    container_name: projetachatfront
-    expose:
-      - 4200
-    links:
-      - spring_app
-    depends_on:
-      - spring_app
-    ports:
-      - 4200:4200
-    restart: on-failure
-    command: "ng serve --open --host 192.168.56.3 --port 4200 --disable-host-check"
 #  projetachatfront:
 #      image: ghadaslimene/projetachatfront
 #      container_name: projetachatfront
