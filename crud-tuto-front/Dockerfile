@@ -1,12 +1,13 @@
-### STAGE 1: Build ###
-FROM node:12.7-alpine AS build
-WORKDIR /usr/src/app
-COPY package.json package-lock.json ./
+FROM node:12-slim
+
+COPY package.json /app/package.json
+
+WORKDIR /app
 RUN npm install
-COPY . .
-RUN npm run build
-### STAGE 2: Run ###
-FROM nginx:1.17.1-alpine
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY --from=build /usr/src/app/dist/crud-tuto-front /usr/share/nginx/html
-EXPOSE 4200
+RUN npm install -g @angular/cli@12.2.18
+
+ENV PATH /app/node_modules/.bin:$PATH
+
+RUN apt-get update
+RUN apt-get install -y vim
+RUN apt-get install -y curl
