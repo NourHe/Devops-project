@@ -44,6 +44,7 @@ services:
     ports:
       - 4200:4200
     restart: on-failure
+    command: sh -c "npm start"
 #    command: "npm install && npm install -g @angular/cli@12.14 "
 #    command: "ng serve --open --host 192.168.1.10 --port 4200 --disable-host-check"
 volumes:
