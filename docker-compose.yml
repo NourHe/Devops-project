@@ -8,9 +8,10 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: 'achatdb'
-
     ports:
       - "3306:3306"
+    volumes:
+      - db:/var/lib/mysql
 
   spring_app:
     image: achat
@@ -28,7 +29,8 @@ services:
            "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
            "spring.jpa.hibernate.ddl-auto" : "update"
          }'
-
+    volumes:
+      - .m2:/root/.m2
 
   achatfront:
     image: yousseftfifha/achatfront
@@ -44,5 +46,6 @@ services:
     restart: on-failure
 #    command: "npm install && npm install -g @angular/cli@12.14 && ng serve --open --host 0.0.0.0 --port 4200 --disable-host-check"
     command: "ng serve --open --host 192.168.1.10 --port 4200 --disable-host-check"
-
+volumes:
+  db:
 
