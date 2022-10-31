@@ -26,10 +26,12 @@ services:
         "spring.datasource.username" : "root",
         "spring.datasource.password" : "",
         "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
-        "spring.jpa.hibernate.ddl-auto" : "create-drop"
+        "spring.jpa.hibernate.ddl-auto" : "update"
       }'
     volumes:
       - .m2:/root/.m2
+    stdin_open: true
+    tty: true
 #  projetachatfront:
 #      image: ghadaslimene/projetachatfront
 #      container_name: projetachatfront
