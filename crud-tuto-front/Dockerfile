@@ -32,10 +32,9 @@ FROM node:12.18-alpine
 WORKDIR /app
 COPY . .
 RUN npm install --force
-RUN npm run build
-# Stage 2: Serve app with nginx servera
+RUN npm run build --prod
+ # Stage 2: Serve app with nginx servera
 FROM nginx:alpine
-#COPY /app/dist/crudtuto-front/ /usr/share/nginx/html
-COPY /dist/crudtuto-Front/ /usr/share/nginx/html
+COPY /app/dist/crudtuto-Front /usr/share/nginx/html
 
 EXPOSE 4200:80
