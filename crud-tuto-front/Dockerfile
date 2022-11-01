@@ -35,5 +35,5 @@ RUN npm install --force
 RUN npm run build
 # Stage 2: Serve app with nginx servera
 FROM nginx:latest
-COPY /app/dist/crudtuto-Front /usr/share/nginx/html
+COPY /app/dist/crudtuto-front /usr/share/nginx/html
 EXPOSE 4200:80
