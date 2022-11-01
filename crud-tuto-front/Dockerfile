@@ -24,5 +24,5 @@
 #RUN apt-get install -y curl
 
 FROM nginx:alpine
-COPY /dist/crudtuto-Frontr /usr/share/nginx/html
+COPY /dist/crudtuto-Front /usr/share/nginx/html
 EXPOSE 4200:80
