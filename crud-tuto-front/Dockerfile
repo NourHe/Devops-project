@@ -31,8 +31,8 @@
 FROM node:12.18-alpine
 WORKDIR /app
 COPY . .
-RUN npm ci && npm run build
-
+RUN npm install --force
+RUN npm run build
 # Stage 2: Serve app with nginx servera
 FROM nginx:alpine
 COPY /app/dist/crudtuto-front/ /usr/share/nginx/html
