@@ -22,7 +22,18 @@
 #RUN apt-get update
 #RUN apt-get install -y vim
 #RUN apt-get install -y curl
+#
+#FROM nginx:alpine
+#COPY /dist/crudtuto-Front /usr/share/nginx/html
+#EXPOSE 4200:80
 
-FROM nginx:alpine
+# Stage 1: Compile and Build angular codebase
+FROM node:12.18-alpine
+WORKDIR /dist
+COPY . .
+RUN npm install --force
+RUN npm run build
+# Stage 2: Serve app with nginx servera
+FROM nginx:latest
 COPY /dist/crudtuto-Front /usr/share/nginx/html
 EXPOSE 4200:80
