@@ -1,9 +1,7 @@
-FROM openjdk:8-jdk-alpine
-EXPOSE 8089
-FROM alpine/curl
-ADD http://192.168.56.3:8081/repository/maven-releases/tn/esprit/rh/achat/1.0/achat-1.0.jar achat-1.0.jar
-ENTRYPOINT ["java","-jar","/achat-1.0.jar"]
-CMD mvn spring-boot:run
+# FROM openjdk:8-jdk-alpine
+# EXPOSE 8089
+# ADD target/achat-1.0.jar achat-1.0.jar
+# ENTRYPOINT ["java","-jar","/achat-1.0.jar"]
 
 # FROM node:12-slim
 #
@@ -20,3 +18,14 @@ CMD mvn spring-boot:run
 # RUN apt-get install -y vim
 # RUN apt-get install -y curl
 
+# FROM openjdk:8-jdk-alpine
+# EXPOSE 8089
+# FROM alpine/curl
+# ADD http://192.168.56.3:8081/repository/maven-releases/tn/esprit/rh/achat/1.0/achat-1.0.jar achat-1.0.jar
+# ENTRYPOINT ["java","-jar","/achat-1.0.jar"]
+# CMD mvn spring-boot:run
+
+FROM openjdk:8-jdk-alpine
+EXPOSE 8089
+ADD http://192.168.56.3:8081/repository/maven-releases/tn/esprit/rh/achat/1.0/achat-1.0.jar achat-1.0.jar
+ENTRYPOINT ["java","-jar","/achat-1.0.jar"]
