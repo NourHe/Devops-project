@@ -20,9 +20,13 @@
 	</properties>
 	<!-- Deploy to Nexus -->
 	<distributionManagement>
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<url>http://192.168.56.3:8081/repository/maven-snapshots/</url>
+		</snapshotRepository>
 		<repository>
-			<id>deploymentRepo</id>
-			<url>http://192.168.56.3:8081/repository/maven-releases/</url>
+			<id>nexus-releases</id>
+			<url>http://192.168.56.3:8081/repository/maven-releases/ </url>
 		</repository>
 	</distributionManagement>
 	<dependencies>
@@ -66,11 +70,42 @@
 			<artifactId>junit-jupiter</artifactId>
 			<version>5.9.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.jacoco</groupId>
+			<artifactId>jacoco-maven-plugin</artifactId>
+			<version>0.8.6</version>
+		</dependency>
 	</dependencies>
 
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>${maven-deploy-plugin.version}</version>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>default-deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<serverId>nexus</serverId>
+					<nexusUrl>http://192.168.56.3:8081/</nexusUrl>
+					<skipStaging>true</skipStaging>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
