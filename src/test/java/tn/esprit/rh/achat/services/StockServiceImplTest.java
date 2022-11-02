@@ -51,7 +51,7 @@ class StockServiceImplTest {
 
     @Test
     void retrieveStock() {
-        assertNotNull(St.retrieveStock(11L));
+        assertNotNull(St.retrieveStock(1L));
     }
 
     @Test
