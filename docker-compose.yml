@@ -14,7 +14,7 @@ services:
       - db:/var/lib/mysql
 
   spring_app:
-    image: achat
+    image: fatmaabrougui/achat
     container_name: achat
     restart: on-failure
     ports:
