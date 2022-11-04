@@ -19,3 +19,17 @@ f
 6src/main/java/tn/esprit/rh/achat/AchatApplication.java,b\4\b413c620a5bd35e10018a5ab6033974f72b71423
 q
 Asrc/main/java/tn/esprit/rh/achat/util/SpringFoxSwaggerConfig.java,4\0\40dd8c0f636f8b623b1826dfd9e4eb242c77c2ff
+w
+Gsrc/main/java/tn/esprit/rh/achat/controllers/FactureRestController.java,f\0\f07e983b8d6f4bc3e16b7e2a5dbd872211ecc664
+u
+Esrc/main/java/tn/esprit/rh/achat/controllers/OperateurController.java,0\8\0838eba035a4a00bc4399334e0a63ea173835699
+y
+Isrc/main/java/tn/esprit/rh/achat/controllers/ReglementRestController.java,7\e\7eeb108fa1e60fa5cf07ffea049432101da66332
+{
+Ksrc/main/java/tn/esprit/rh/achat/controllers/FournisseurRestController.java,0\2\02e3780e69d4306834f9cffc081b8419a3110ac4
+w
+Gsrc/main/java/tn/esprit/rh/achat/controllers/ProduitRestController.java,4\4\44049d0dceb7e63b9cff4011ee7654aee115e79c
+u
+Esrc/main/java/tn/esprit/rh/achat/controllers/StockRestController.java,2\2\2217e1a178510d28a7fc03ee4626b1821fa022bd
+{
+Ksrc/main/java/tn/esprit/rh/achat/controllers/SecteurActiviteController.java,5\0\50feb469aec0759f3d8164f6fd0acb819eb83d95
