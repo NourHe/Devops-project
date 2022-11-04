@@ -6,13 +6,13 @@ services:
     image: mysql:8
     restart: unless-stopped
     environment:
-      - MYSQL_ROOT_PASSWORD= ""
-      - MYSQL_DATABASE='achatdb'
+      - MYSQL_ALLOW_EMPTY_PASSWORD= yes
+      - MYSQL_DATABASE=achatdb
     ports:
       - "3306:3306"
     volumes:
       - db:/var/lib/mysql
-  spring_app: 
+  app:
     depends_on:
       - mysqldb
     image: nourhelali/achat
@@ -30,7 +30,8 @@ services:
       }'
     volumes:
       - .m2:/root/.m2
-   
+    stdin_open: true
+    tty: true
 
 volumes:
   db:
