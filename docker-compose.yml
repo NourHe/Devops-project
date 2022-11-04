@@ -32,14 +32,14 @@ services:
       - .m2:/root/.m2
     stdin_open: true
     tty: true
-#  projetachatfront:
-#      image: ghadaslimene/projetachatfront
-#      container_name: projetachatfront
-#      links:
-#        - app
-#      depends_on:
-#        - app
-#      ports:
-#        - 4200:80
+  projetachatfront:
+      image: ghadaslimene/projetachatfront
+      container_name: projetachatfront
+      links:
+        - app
+      depends_on:
+        - app
+      ports:
+        - 4200:80
 volumes:
   db:

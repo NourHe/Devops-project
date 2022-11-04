@@ -33,3 +33,9 @@ u
 Esrc/main/java/tn/esprit/rh/achat/controllers/StockRestController.java,2\2\2217e1a178510d28a7fc03ee4626b1821fa022bd
 {
 Ksrc/main/java/tn/esprit/rh/achat/controllers/SecteurActiviteController.java,5\0\50feb469aec0759f3d8164f6fd0acb819eb83d95
+s
+Csrc/test/java/tn/esprit/rh/achat/services/StockServiceImplTest.java,6\6\664cb93bca09fe078343b01b39b0277f13347f1d
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+}
+Msrc/main/java/tn/esprit/rh/achat/repositories/CategorieProduitRepository.java,f\9\f94251f577a36692819494c6630d12b0beaf8f8e
