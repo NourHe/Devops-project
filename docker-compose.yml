@@ -36,9 +36,9 @@ services:
       image: ghadaslimene/projetachatfront
       container_name: projetachatfront
       links:
-        - app
+        - spring_app
       depends_on:
-        - app
+        - spring_app
       ports:
         - 4200:80
 volumes:
