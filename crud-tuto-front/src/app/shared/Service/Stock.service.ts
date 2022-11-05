@@ -7,20 +7,20 @@ import { HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class StockService {
-  readonly API_URL = 'http://192.168.56.3:8089/SpringMVC/stock';
+  readonly API_URL = 'http://192.168.56.3:8089/SpringMVC/stock/';
 
   constructor(private httpClient: HttpClient) { }
 
   getAllStocks() {
-    return this.httpClient.get(`${this.API_URL}/retrieve-all-stocks`)
+    return this.httpClient.get(`${this.API_URL}retrieve-all-stocks`)
   }
   addStock(stock : any) {
-    return this.httpClient.post(`${this.API_URL}/add-stock`, stock)
+    return this.httpClient.post(`${this.API_URL}add-stock`, stock)
   }
   editStock(stock : any){
-    return this.httpClient.put(`${this.API_URL}/modify-stock`, stock)
+    return this.httpClient.put(`${this.API_URL}modify-stock`, stock)
   }
   deleteStock(idStock : any){
-    return  this.httpClient.delete(`${this.API_URL}/remove-stock/${idStock}`)
+    return  this.httpClient.delete(`${this.API_URL}remove-stock/${idStock}`)
   }
 }
