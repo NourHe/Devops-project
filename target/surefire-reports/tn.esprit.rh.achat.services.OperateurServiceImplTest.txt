@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: tn.esprit.rh.achat.services.OperateurServiceImplTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 19.794 s <<< FAILURE! - in tn.esprit.rh.achat.services.OperateurServiceImplTest
+retrieveAllOperateurs  Time elapsed: 0.431 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <3> but was: <4>
+	at tn.esprit.rh.achat.services.OperateurServiceImplTest.retrieveAllOperateurs(OperateurServiceImplTest.java:25)
+
+retrieveOperateur  Time elapsed: 0.035 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at tn.esprit.rh.achat.services.OperateurServiceImplTest.retrieveOperateur(OperateurServiceImplTest.java:40)
+

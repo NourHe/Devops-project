@@ -1,4 +1,5 @@
 package tn.esprit.rh.achat.services;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,13 +22,14 @@ public class OperateurServiceImplTest {
     @Test
     @Order(1)
     void retrieveAllOperateurs() {
-        List<Operateur> listUsers = Ot.retrieveAllOperateurs();
-        //assertEquals(0, listUsers.size());
-        assertNotNull(listUsers);
+        List<Operateur> listOperateurs = Ot.retrieveAllOperateurs();
+        //assertEquals(0, listOperateurs.size());
+        assertNotNull(listOperateurs);
     }
 
     @Test
-    void addOperateur() {
+    @Order(2)
+    void addingOperateur() {
         Operateur r1 = new Operateur();
         r1.setNom("Operateur1");
         r1.setPassword("secret123");
@@ -37,10 +39,29 @@ public class OperateurServiceImplTest {
     }
 
     @Test
-    void retrieveOperateur() {
-        assertNotNull(Ot.retrieveOperateur(1L));
+    @Order(3)
+    void retrievingOperateur() {
+        assertNotNull(Ot.retrieveOperateur(5L));
     }
+ 
+    
+    @Test
+    @Order(4)
+	void ModifyingOperateur()   {
+		
+		Operateur r = new Operateur( "test 4", "test -2", "test -99"); 
+		r.setIdOperateur(4L);
+		Operateur Operateur2  = Ot.updateOperateur(r); 
+		Assertions.assertEquals(r.getNom(), Operateur2.getNom());
+	}
 
-   
+	
+//	@Test
+//	@Order(5)
+//	void DeletingOperateur() {
+//		Ot.deleteOperateur(9L);
+//		Assertions.assertNull(Ot.retrieveOperateur(9L));
+//	} 
+//   
 
 }
