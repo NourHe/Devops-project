@@ -31,9 +31,9 @@ public class OperateurServiceImplTest {
     @Order(2)
     void addingOperateur() {
         Operateur r1 = new Operateur();
-        r1.setNom("Operateur1");
-        r1.setPassword("secret123");
-        r1.setPrenom("Telecm");
+        r1.setNom("Operateur9");
+        r1.setPassword("secret9");
+        r1.setPrenom("Telecm9");
         Operateur savedOperateur1= Ot.addOperateur(r1);
         assertEquals(r1.getNom(), savedOperateur1.getNom());
     }
@@ -41,7 +41,7 @@ public class OperateurServiceImplTest {
     @Test
     @Order(3)
     void retrievingOperateur() {
-        assertNotNull(Ot.retrieveOperateur(5L));
+        assertNotNull(Ot.retrieveOperateur(4L));
     }
  
     
