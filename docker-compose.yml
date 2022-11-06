@@ -37,7 +37,7 @@ services:
     container_name: achatfront
     restart: on-failure
     ports:
-      - "80:80"
+      - "4200:80"
     depends_on:
       - app
       
