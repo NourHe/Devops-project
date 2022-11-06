@@ -29,7 +29,7 @@ public class FactureServiceImpl implements IFactureService {
     @Autowired
     ReglementServiceImpl reglementService;
 	
-	@Override
+	/* @Override
 	public List<Facture> retrieveAllFactures() {
 		List<Facture> factures = (List<Facture>) factureRepository.findAll();
 		for (Facture facture : factures) {
@@ -42,7 +42,7 @@ public class FactureServiceImpl implements IFactureService {
 	public Facture addFacture(Facture f) {
 		return factureRepository.save(f);
 	}
-
+*/
 	/*
 	 * calculer les montants remise et le montant total d'un détail facture
 	 * ainsi que les montants d'une facture
@@ -82,7 +82,7 @@ public class FactureServiceImpl implements IFactureService {
 		factureRepository.updateFacture(factureId);
 	}
 
-	@Override
+/* 	@Override
 	public Facture retrieveFacture(Long factureId) {
 
 		Facture facture = factureRepository.findById(factureId).orElse(null);
@@ -112,5 +112,5 @@ public class FactureServiceImpl implements IFactureService {
 		return pourcentage;
 	}
 	
-
+*/
 }
