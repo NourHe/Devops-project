@@ -6,16 +6,16 @@ services:
     image: mysql:8
     restart: unless-stopped
     environment:
-      - MYSQL_ROOT_PASSWORD= ""
-      - MYSQL_DATABASE='achatdb'
+      - MYSQL_ALLOW_EMPTY_PASSWORD= yes
+      - MYSQL_DATABASE=achatdb
     ports:
       - "3306:3306"
     volumes:
       - db:/var/lib/mysql
-  spring_app: 
+  app:
     depends_on:
       - mysqldb
-    image: achat
+    image: nourhelali/achat
     container_name: achat
     restart: on-failure
     ports:
@@ -26,11 +26,10 @@ services:
         "spring.datasource.username" : "root",
         "spring.datasource.password" : "",
         "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
-        "spring.jpa.hibernate.ddl-auto" : "update"
-      }'
+        "spring.jpa.hibernate.ddl-auto" : "update"}'
     volumes:
       - .m2:/root/.m2
-   
-
+    stdin_open: true
+    tty: true
 volumes:
   db:
