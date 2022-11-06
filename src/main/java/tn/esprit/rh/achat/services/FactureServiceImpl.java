@@ -89,7 +89,7 @@ public class FactureServiceImpl implements IFactureService {
 		log.info("facture :" + facture);
 		return facture;
 	}
-
+*/
 	@Override
 	public List<Facture> getFacturesByFournisseur(Long idFournisseur) {
 		Fournisseur fournisseur = fournisseurRepository.findById(idFournisseur).orElse(null);
@@ -112,5 +112,5 @@ public class FactureServiceImpl implements IFactureService {
 		return pourcentage;
 	}
 	
-*/
+
 }
