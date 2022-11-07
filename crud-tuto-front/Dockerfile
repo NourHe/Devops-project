@@ -1,4 +1,4 @@
-FROM nginx:1.17.1-alpine as build
+FROM nginx:1.17.1-alpine AS build
 
 WORKDIR /app
 COPY . .
