@@ -1,4 +1,4 @@
 
 FROM nginx:alpine
 COPY crud-tuto-front/nginx.conf /etc/nginx/nginx.conf
-COPY --from=build /usr/src/app/dist /usr/share/nginx/html
+COPY  /usr/src/app/dist /usr/share/nginx/html
