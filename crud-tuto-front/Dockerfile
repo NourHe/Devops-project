@@ -1,4 +1,4 @@
-FROM nginx:1.17.1-alpine AS build
+FROM nginx:1.17.1-alpine
 
 WORKDIR /app
 COPY . .
@@ -7,4 +7,4 @@ RUN npm run build
 
 FROM nginx:alpine
 COPY crud-tuto-front/nginx.conf /etc/nginx/nginx.conf
-COPY --from=build /usr/src/app/dist /usr/share/nginx/html
+COPY /usr/src/app/dist /usr/share/nginx/html
