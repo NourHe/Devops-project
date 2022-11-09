@@ -1,4 +1,4 @@
-package tn.esprit.rh.achat.services;
+/* package tn.esprit.rh.achat.services;
 
 import tn.esprit.rh.achat.entities.Produit;
 
@@ -19,3 +19,4 @@ public interface IProduitService {
 	void assignProduitToStock(Long idProduit, Long idStock);
 
 }
+*/
