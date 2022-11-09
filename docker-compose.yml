@@ -37,8 +37,6 @@ services:
     restart: on-failure
     depends_on:
       - app
-    links:
-      - app
     ports:
       - "80:80"
       
