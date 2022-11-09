@@ -1,4 +1,4 @@
-package tn.esprit.rh.achat.controllers;
+/* package tn.esprit.rh.achat.controllers;
 
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +32,7 @@ public class ProduitRestController {
 	public Produit retrieveRayon(@PathVariable("produit-id") Long produitId) {
 		return produitService.retrieveProduit(produitId);
 	}
-
+*/
 	/* Ajouter en produit tout en lui affectant la catégorie produit et le stock associés */
 	// http://localhost:8089/SpringMVC/produit/add-produit/{idCategorieProduit}/{idStock}
 	@PostMapping("/add-produit")
