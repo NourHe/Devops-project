@@ -1,4 +1,4 @@
-/* package tn.esprit.rh.achat.services;
+ package tn.esprit.rh.achat.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,4 +42,3 @@ public class OperateurServiceImpl implements IOperateurService {
 	}
 
 }
-*/
