@@ -1,4 +1,4 @@
-/* package tn.esprit.rh.achat.services;
+package tn.esprit.rh.achat.services;
 
 import tn.esprit.rh.achat.entities.Operateur;
 
@@ -18,4 +18,4 @@ public interface IOperateurService {
 	Operateur retrieveOperateur(Long id);
 
 }
- */
+ 
