@@ -1,4 +1,4 @@
-package tn.esprit.rh.achat.controllers;
+/* package tn.esprit.rh.achat.controllers;
 
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +46,7 @@ public class FactureRestController {
     /*
      * une facture peut etre annulé si elle a été saisie par erreur Pour ce
      * faire, il suffit de mettre le champs active à false
-     */
+     
     // http://localhost:8089/SpringMVC/facture/cancel-facture/{facture-id}
     @PutMapping("/cancel-facture/{facture-id}")
     @ResponseBody
@@ -80,3 +80,4 @@ public class FactureRestController {
     }
 
 }
+*/
