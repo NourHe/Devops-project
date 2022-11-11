@@ -32,7 +32,8 @@ services:
     stdin_open: true
     tty: true
     
-    front:
+ 
+  front:
     image: nourhelali/achatfront
     container_name: achatfront
     restart: on-failure
