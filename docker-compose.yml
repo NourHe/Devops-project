@@ -31,5 +31,17 @@ services:
       - .m2:/root/.m2
     stdin_open: true
     tty: true
+    
+    front:
+    image: nourhelali/achatfront
+    container_name: achatfront
+    restart: on-failure
+    depends_on:
+      - app
+    ports:
+      - "4200:80"
+    
+    
+    
 volumes:
   db:
