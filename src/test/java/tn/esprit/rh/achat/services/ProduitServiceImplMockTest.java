@@ -33,7 +33,7 @@ class ProduitServiceImplMockTest {
         {
             add(new Produit(1L, "P1", "Biscuit", 5, null, null, null, null, null));
             add(new Produit(2L, "P1", "Javel", 5, null, null, null, null, null));
-            add(new Produit(3L, "P1", "Tv", 5, null, null, null, null, null));
+            add(new Produit(3L, "P1", "TV", 5, null, null, null, null, null));
         }};
 
 
