@@ -27,6 +27,7 @@ class ProduitServiceImplMockTest {
     ProduitServiceImpl produitService;
 
 
+
     Produit produit1 = new Produit(null, "P", "PRODUIT1", 5, null, null, null, null, null);
 
     List<Produit> prodlist = new ArrayList<Produit>() {
