@@ -51,7 +51,7 @@ public class ReglementServiceImplMock {
     @Test
     void retrieveReglement() {
         Mockito.when(reglementRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(regl1));
-        Reglement reg1 = reglementService.retrieveReglement(2L);
+        Reglement reg1 = reglementService.retrieveReglement(1L);
         Assertions.assertNotNull(reg1);
     }
     
