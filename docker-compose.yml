@@ -9,7 +9,8 @@ services:
       MYSQL_ROOT_PASSWORD: MYSQL_ALLOW_EMPTY_PASSWORD=true
     ports:
       # <Port exposed> : < MySQL Port running inside container>
-      - '3306:3306'
+    volumes:
+      - db:/var/lib/mysql
 
 
   spring-app:
@@ -26,3 +27,5 @@ services:
                "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
                "spring.jpa.hibernate.ddl-auto" : "update"
              }'
+    volumes:
+      - .m2:/root/.m2
