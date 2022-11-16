@@ -38,8 +38,8 @@ public class ReglementServiceImplTest {
     @Order(2)
     void addReglement() {
     	Reglement r1 = new Reglement();
-        r1.setMontantPaye(5000);
-        r1.setMontantRestant(6000);
+        r1.setMontantPaye(1999);
+        r1.setMontantRestant(1999);
         r1.setDateReglement(new Date());
         r1.setPayee(Boolean.FALSE);
         Reglement savedReglement= Rs.addReglement(r1);
