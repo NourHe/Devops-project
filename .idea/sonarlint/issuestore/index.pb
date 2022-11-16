@@ -33,3 +33,5 @@ p
 @src/main/java/tn/esprit/rh/achat/entities/DetailFournisseur.java,e\4\e42c8d58382940ec165d64342d9e85e085034c37
 j
 :src/main/java/tn/esprit/rh/achat/entities/Fournisseur.java,8\4\841f85303f57a2304f12a5bc2490499d1da744be
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
