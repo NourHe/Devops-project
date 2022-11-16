@@ -41,7 +41,7 @@ import static org.junit.jupiter.api.Assertions.*;
     @Test
     @Order(3)
     void retrievingOperateur() {
-        assertNotNull(Ot.retrieveOperateur(4L));
+        assertNotNull(Ot.retrieveOperateur(1L));
     }
  
     
@@ -50,7 +50,7 @@ import static org.junit.jupiter.api.Assertions.*;
 	void ModifyingOperateur()   {
 		
 		Operateur r = new Operateur( "test 4", "test -2", "test -99"); 
-		r.setIdOperateur(4L);
+		r.setIdOperateur(2L);
 		Operateur Operateur2  = Ot.updateOperateur(r); 
 		Assertions.assertEquals(r.getNom(), Operateur2.getNom());
 	}
