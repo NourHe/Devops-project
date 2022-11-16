@@ -58,7 +58,7 @@ public class ReglementServiceImplMockTest {
     
     @Test
     void addReglementTestMock() {
-    	Reglement regl2 = new Reglement(20.520f, 320.20f,Boolean.TRUE, new Date());
+    	Reglement regl2 = new Reglement(1997f, 1997f,Boolean.TRUE, new Date());
         Mockito.when(reglementRepository.save(ArgumentMatchers.any(Reglement.class))).thenReturn(regl2);
         Reglement created = reglementService.addReglement(regl2);
         Assertions.assertSame(created,regl2);
