@@ -31,7 +31,7 @@ import java.util.Optional;
 
 @SpringBootTest(classes=AchatApplication.class)
 @ExtendWith(MockitoExtension.class)
-public class ReglementServiceImplMock {
+public class ReglementServiceImplMockTest {
 	@Mock
     ReglementRepository reglementRepository;
     @InjectMocks
