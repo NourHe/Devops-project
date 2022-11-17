@@ -31,7 +31,7 @@ public class SpringFoxSwaggerConfig {
 				.securityContexts(Collections.singletonList(securityContext()))
 				.securitySchemes(Arrays.asList(apiKey()))
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("com.esprit.examen.controller"))
+				.apis(RequestHandlerSelectors.basePackage("com.esprit.achat.controller"))
 				.paths(PathSelectors.any())
 				.build();
 	}
@@ -45,6 +45,7 @@ public class SpringFoxSwaggerConfig {
     }
 
 	private ApiKey apiKey() {
+
 		return new ApiKey("Bearer", AUTHORIZATION_HEADER, "header");
 	}
 	
